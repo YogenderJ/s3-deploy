@@ -32,3 +32,4 @@ jobs:
           target_url: https://github-action-2-5-22.s3-website-us-west-1.amazonaws.com//${{steps.S3.outputs.object_key}}/index.html
           state: 'success'
           deployment_id: ${{ steps.test.outputs.deployment_id }}
+

@@ -23,13 +23,14 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_S3_BUCKET }}
           source_dir: 'website'
+          destination_dir: ${{secrets.DESTINATION_DIR}}
 
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
-          target_url: https://github-action-2-5-22.s3-website-us-west-1.amazonaws.com//${{steps.S3.outputs.object_key}}/index.html
+          target_url: https://github-action-2-5-22.s3-website-us-west-1.amazonaws.com/index.html
           state: 'success'
           deployment_id: ${{ steps.test.outputs.deployment_id }}
 

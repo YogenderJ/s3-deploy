@@ -2,9 +2,8 @@ name: 'Upload website to AWS S3'
 on: [push,pull_request]
 
 jobs:
-  Upload websit to s3
+  Upload-websie-to-s3:
     runs-on: ubuntu-latest
-    
     steps:
       - name: '1: Checkout'
         uses: actions/checkout@v3
